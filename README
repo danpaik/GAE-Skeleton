@@ -1,0 +1,41 @@
+This is just a baseline skeleton that can be used to create a Google AppEngine GAE application.
+
+STEPS TO GET STARTED:
+1) Fill out app.yaml by entering in your application name in place of (TESTAPP)
+
+Done!
+
+Some features include:
+
+1) ability to use sessions via gaesessions
+	you can do things like:
+	
+		session = get_current_session()
+		session_var = 'bleh'
+		session[session_var] = 1
+
+	and you can also do stuff like:
+
+		def checkAccess(session_var):
+			session = get_current_session()
+			try:
+				if (session[session_var] == 1):
+				return 1
+			else:
+				return 0
+		except KeyError:
+			return 0
+		return 1
+		
+2) ability to use a cdn (another GAE instance or any other CDN).  default is to not use a CDN.
+	set up the CDN_HOST (as well as other properties file type stuff) in the settings.py file
+	
+3) Data model is separated out into models.py.  I have a couple of sample tables in there for reference.
+
+4) use of django html templates in a separate "templates" folder.  "home" is the main folder.  "sub1" - "sub3" are samples of more subdirectories if you want them.
+
+5) use of django base html templates for headers, footers, etc.
+
+If this helps you get started, then great!  If you have something better, let me know.  I know that this is very rudimentary.
+	
+	

@@ -1,0 +1,34 @@
+application: babodotcom
+version: 1
+runtime: python
+api_version: 1
+
+default_expiration: "5m"
+
+handlers:
+- url: /favicon.ico
+  static_dir: static/images/favicon.ico
+
+- url: .*/css
+  static_dir: static/css
+  
+- url: .*/images
+  static_dir: static/images
+  
+- url: .*/js
+  static_dir: static/js
+
+- url: /sub1/.*
+  script: sub1.py
+
+- url: /sub2/.*
+  script: sub2.py
+
+- url: /sub3/.*
+  script: sub3.py
+
+- url: /.*
+  script: home.py
+
+builtins:
+- datastore_admin: on
